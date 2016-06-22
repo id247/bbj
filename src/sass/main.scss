@@ -8,9 +8,627 @@
 	position: relative;
 }
 
+.wrap{
+	@include clearfix;
+	max-width: 1140px;
+	min-width: 1000px;
+	padding: 0 10px;
+	margin: auto;
+}
+
 /* ==========================================================================
  * main
  * ========================================================================== */
 
 
- 
+/* ==========================================================================
+ * section
+ * ========================================================================== */
+
+.section{
+	padding: 100px 0 100px;
+
+
+	&__title{
+		text-align: center;
+		font-family: $kis;
+		margin: 0 0 40px;
+		font-weight: 400;
+		font-size: 48px;
+		line-height: (58/48);
+	}
+}
+
+
+/* ==========================================================================
+ * header
+ * ========================================================================== */
+
+.header{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	z-index: 500;
+
+	color: #fff;
+
+	padding: 19px 0 10px;
+	
+	transition: top .8s;
+
+	&--hidden{
+		top: -200px;
+	}
+
+	&--scrolled{
+		background: #fff;
+		top: 0px;
+		box-shadow: 0 0 10px rgba(0,0,0,.5);
+		color: $text;
+	}
+
+	@media (min-width: 1024px){
+		position: fixed;
+	}		
+
+	&__menu{
+		float: left;
+	}
+
+	&__contacts{
+		float: right;
+	}
+}
+
+.header-contacts{
+
+	&__list{
+		margin: 0 0 -20px;
+	}
+
+	&__item{
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 0 20px 18px;
+		&:first-child{
+			margin-left: 0;
+		}
+
+		&--button{
+			margin-top: -7px;
+		}
+	}
+
+	&__phone{
+		
+	}
+
+	&__button{
+		letter-spacing: 0.02em;
+		border: 1px solid;
+		padding: 6px 15px;
+		border-radius: 5px;
+	}
+}
+
+.header-phone{
+	letter-spacing: 0.02em;
+
+	&__number{
+		font-size: 16px;
+		margin: 0 0 3px;
+	}
+
+	&__text{
+		opacity: .6;
+		font-size: 12px;
+	}
+}
+
+/* ==========================================================================
+ * menu
+ * ========================================================================== */
+
+.menu{
+	font-size: 16px;
+	letter-spacing: 0.02em;
+
+	&__list{
+		margin: 0 0 -20px;
+	}
+
+	&__item{
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 0 20px 15px;
+		&:first-child{
+			margin-left: 0;
+		}
+
+		@media (min-width: 1090px){
+			margin-left: 23px;
+		}
+	}
+
+	&__href{
+		border-color: #6b6c6d;
+
+		&.active{
+			border-color: transparent;
+		}
+	}
+}
+
+/* ==========================================================================
+ * home
+ * ========================================================================== */
+
+.home{
+	background: #1a110d url(../images/bg/home.jpg) 50% 0 no-repeat;
+	background-size: cover;
+	color: #fff;
+	padding: 210px 0;
+
+	&__uptitle{
+		text-align: center;
+		font-size: 16px;
+		margin: 0 0 20px;
+		text-transform: uppercase; 
+	}
+
+	&__title{
+		font-size: 60px;
+	}
+}
+
+
+/* ==========================================================================
+ * about
+ * ========================================================================== */
+
+.about{
+
+	&__numbers{
+		float: right;
+		width: 210px;
+	}
+
+	&__content{
+		margin: 0 250px 0 0;
+	}
+
+	&__text{
+		font-size: 18px;
+		line-height: (32/18);
+	}
+}
+
+.about-numbers{
+	text-align: center;
+
+	&__list{
+		margin: 0 0 -45px;
+	}
+
+	&__item{
+		margin: 0 0 45px;
+		font-size: 14px;
+		line-height: (20/14);
+		color: $grey;
+	}
+
+	&__number{
+		font-size: 90px;
+		line-height: 1;
+		margin: -10px 0 10px;
+		letter-spacing: -0.06em;
+		font-family: $kis;
+		display: block;
+		color: $text;
+	}
+}
+
+/* ==========================================================================
+ * regions
+ * ========================================================================== */
+
+.regions{
+	background: #0e335a url(../images/bg/map.jpg) 50% 50% no-repeat;
+	background-size: cover;
+	color: #fff;
+
+	&__subtitle{
+		display: block;
+		font-family: $mainFontFamily;
+		font-size: 24px;
+		margin: 25px 0 0;
+	}
+}
+
+
+/* ==========================================================================
+ * docs
+ * ========================================================================== */
+
+.docs{
+
+	&__title{
+		text-align: left;
+	}
+
+	&__about{
+		float: right;
+		width: 187px;
+		font-family: $kis;
+		font-style: italic;
+		font-size: 24px;
+		line-height: (30/24);
+
+		&:before{
+			content: '';
+			display:  block;
+			margin: 0 0 15px;
+			@include sprite($docs);
+		}
+	}
+
+	&__content{
+		margin: 0 270px 0 0;
+	}
+
+	&__list{
+		
+	}
+
+	&__item{
+		margin: 0 0 30px;
+		padding: 0 0 0 20px;
+		font-size: 18px;
+		line-height: (30/18);
+
+		position: relative;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+
+		&:before{
+			position: absolute;
+			top: 0;
+			left: 0;
+			content: '–';
+			display: inline-block; 	
+		}
+	}
+	
+	&__href{
+		color: $blue;
+	}
+}
+
+
+/* ==========================================================================
+ * support
+ * ========================================================================== */
+
+.support{
+	background: #1a110d url(../images/bg/support.jpg) 50% 0 no-repeat;
+	background-size: cover;
+	color: #fff;
+
+	padding: 110px 0 100px;
+
+	&__title{
+		font-size: 36px;
+		margin: 0 0 75px;
+	}
+
+	&__list{
+		text-align: center;
+		margin: 0 -1% -30px;
+	}
+
+	&__item{
+		display: inline-block;
+		vertical-align: top;
+		width: 30%;
+		margin: 0 1% 30px;
+		font-size: 18px;
+		line-height: (24/18);
+		
+		&:before{
+			content: '';
+			display: block;
+			margin: 0 auto 20px;
+			
+		}
+
+		&--1:before{
+			@include sprite($support-1);
+		}
+
+		&--2:before{
+			@include sprite($support-2);
+		}
+
+		&--3:before{
+			@include sprite($support-3);
+		}
+	}
+}
+
+/* ==========================================================================
+ * grey-bg
+ * ========================================================================== */
+
+.grey-bg{
+	background: $grey-bg;
+}
+
+/* ==========================================================================
+ * benefits
+ * ========================================================================== */
+
+.benefits{
+
+	&__title{
+		margin: 0 0 90px;
+	}
+
+	&__data{
+		display: block;
+		margin: 10px 0 0;
+		font-size: 14px;
+		color: $grey;
+		font-family: $mainFontFamily;
+	}
+
+	&__list{
+		text-align: center;
+		margin: 0 -1% -30px;
+	}
+
+	&__item{
+		display: inline-block;
+		vertical-align: top;
+		width: 24%;
+		margin: 0 1% 30px;
+		font-size: 14px;
+		color: $grey;
+		line-height: (20/14);
+		
+		&:before{
+			content: '';
+			display: block;
+			margin: 0 auto 20px;
+			
+		}
+
+		&--1:before{
+			@include sprite($per-30);
+			margin-bottom: 57px;
+		}
+
+		&--2:before{
+			@include sprite($per-40);
+		}
+
+		&--3:before{
+			@include sprite($per-65);
+			margin-bottom: 38px;
+		}
+	}
+}
+
+/* ==========================================================================
+ * testimonials
+ * ========================================================================== */
+
+.testimonials{
+
+	&__wrap{
+		background: #fff;
+		padding: 70px 70px;
+	}
+
+	&__columns{
+		text-align: center;
+	}
+
+	&__column{
+		display: inline-block;
+		vertical-align: top;
+		text-align: left;
+		width: 46%;
+		margin: 0 1.5%;
+	}
+
+	&__list{
+		
+	}
+
+	&__item{
+		margin: 0 0 35px;
+	}
+}
+
+.testimonials-item{
+	
+	@include clearfix;
+
+	&__image-placeholder{
+		float: left;
+		width: 70px;
+	}
+
+	&__image{
+		vertical-align: top;
+	}
+
+	&__content{
+		margin: 0 0 0 75px;
+	}
+
+	&__name{
+		font-size: 14px;
+		color: $grey;
+		margin: 0 0 10px;
+	}
+
+	&__text{
+		font-size: 20px;
+		line-height: (28/20);
+	}
+}
+
+
+/* ==========================================================================
+ * how
+ * ========================================================================== */
+
+.how{
+
+	&__list{
+		text-align: center;
+		width: 760px;
+		margin: auto;
+		counter-reset: how; 
+	}
+
+	&__item{
+		font-size: 20px;
+		line-height: (28/20);
+		margin: 0 0 35px;	
+
+		&:before{
+			counter-increment: how;      
+  			content: counter(how);
+			display: block;
+			font-family: $kis;
+			color: $blue;
+			font-size: 60px;
+			line-height: 1;
+			margin: 0 0 0px;
+
+		}
+
+		&:last-child{
+			margin-bottom: 0; 
+		}
+	}
+}
+
+
+/* ==========================================================================
+ * order
+ * ========================================================================== */
+
+.order{
+	background: #171515 url(../images/bg/order.jpg) 50% 0 no-repeat;
+	background-size: cover;
+	color: #fff;
+	padding: 90px 0 80px;
+
+	&__title{
+		margin: 0 0 70px;
+	}
+
+	&__form{
+		width: 670px;
+		margin:  auto;
+	}
+}
+
+.order-form{
+	background: #fff;
+	border-radius: 15px;
+	padding: 45px;
+	color: $text;
+
+	&__title{
+		text-align: center;
+		margin: 0 0 30px;
+		font-size: 36px;
+		font-weight: 600;
+	}
+
+	&__row{
+		@include clearfix;
+		margin: 0 0 0 -2%;
+	}
+
+	&__cell{
+		float: left;
+		margin-left: 2%;
+		width: 48%;
+	}
+
+	&__button-placeholder{
+		text-align: center;
+	}
+}
+
+
+/* ==========================================================================
+ * footer
+ * ========================================================================== */
+
+.footer{
+	background: #141414;
+	color: #fff;
+	padding: 30px 0 30px;
+
+	&__social{
+		float: right;
+	}
+
+	&__content{
+		float: left;
+	}
+
+	&__text{
+		font-size: 24px;		
+	}
+}
+
+/* ==========================================================================
+ * social
+ * ========================================================================== */
+
+.social{
+
+	&__list{
+		margin: 0 0 -2px;
+	}
+
+	&__item{
+		display: inline-block;
+		vertical-align: top;
+		margin: 0 2px 2px;
+	}
+
+	&__href{
+		display: block;
+		text-indent: -9999px;
+		text-align: left;
+
+		&--vk{
+			@include sprite($soc-vk);
+		}
+
+		&--fb{
+			@include sprite($soc-fb);
+		}
+
+		&--ok{
+			@include sprite($soc-ok);
+		}
+
+		&:hover{
+			opacity: .8;
+		}
+		
+	}
+}

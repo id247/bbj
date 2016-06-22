@@ -38,6 +38,31 @@
 		}
 	}
 
+	&--yellow{
+		$startcolor: #f6bf00;
+		$endcolor: #e89f00;
+		background: $startcolor;
+		background: linear-gradient(to bottom, $startcolor 0%, #e89f00 100%);
+		color: #000;
+		border: 0px;
+		box-shadow: inset 0 2px 5px rgba(255,255,255,.3),
+					0 2px 0 #be8f00;
+		text-shadow: 0 -1px 0 rgba(255,255,255,.25);
+		position: relative;
+		transition: none;
+		&:hover{
+			background: lighten($startcolor, 5%);
+			background: linear-gradient(to bottom, lighten($startcolor, 5%) 0%, lighten($endcolor, 5%) 100%);
+		
+		}
+		&:active{
+			background: darken($startcolor, 2%);
+			background: linear-gradient(to bottom, darken($endcolor, 2%) 0%, darken($startcolor, 2%) 100%);
+			box-shadow: inset 0 2px 5px rgba(255,255,255,.3);
+			top: 2px;
+		}
+	}
+
 	&--m{
 		border-radius: 8px;
 		font-weight: 700;
@@ -48,8 +73,8 @@
 	&--l{
 		border-radius: 8px;
 		font-weight: 700;
-		font-size: 15px;
-		padding: 10px 20px 10px;
+		font-size: 28px;
+		padding: 15px 80px 15px;
 	}
 
 	&--block{
@@ -76,36 +101,11 @@
 
 	&__input-placeholder{
 		position: relative;
-		margin-bottom: 16px;
-
-		&--inline{
-			width: 48%;
-			float: right;
-			margin-bottom: 0;
-			&:first-child{
-				float: left;
-			}
-		}
-	}
-
-	label.error{
-		font-size: 13px;
-		color: #ef6d51;
-		//position: absolute;
-		//top: -13px;
-		//right: 0;
-		//margin-left: 0;
-		//padding: 5px;
-		//text-align: center;
-		//white-space: nowrap;
-		///color: #fff;
-		///border-radius: 5px;
-		//background: #000;
-		//background: rgba(0, 0, 0, .7);
+		margin: 0 0 20px;
 	}
 
 	&__button-placeholder{
-		margin-top: 20px;
+		margin-top: 29px;
 	}
 
 	&__input,
@@ -114,21 +114,21 @@
 		padding: 0 0 0 20px;
 		width: 100%;
 		outline: none;
-		border: 1px solid #d7d7d7;
+		border: 1px solid #e1e1e1;
 		max-width: 100%;
-		font-size: 15px;
+		font-size: 18px;
 		font-family: $mainFontFamily;
-		background: #f6f5f1;
+		background: #fff;
 		border-radius: 5px;
-		box-shadow: inset 0 2px 3px rgba(0,0,0,.13); 
+		box-shadow: inset 0 3px 9px rgba(229,229,229,.5); 
 		&.error{
 			border-color: #ef6d51;
 		}
 	}
 	&__input{
-		&--h40{
-			height: 40px;
-			line-height: 40px;
+		&--m{
+			height: 48px;
+			line-height: 48px;
 		}
 	}
 	&__textarea{
