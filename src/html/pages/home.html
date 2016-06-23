@@ -151,9 +151,21 @@
 			<span class="regions__subtitle">уже отказались от бумажного журнала</span>
 		</h2>
 
-		<div class="regions__map">
+		<div class="regions__map map">
 			
-			<!-- @@include("../svg/map.svg", {}) -->
+			@@include("../svg/map.html", {})
+
+			<div class="map__balloon map-balloon" id="map-ballon">
+
+				<div class="map-balloon__title">
+					
+				</div><!-- /.map-balloon__title -->
+
+				<div class="map-balloon__text">
+					
+				</div><!-- /.map-balloon__text -->
+				
+			</div><!-- /.map__baloon -->
 
 		</div><!-- /.regions__map -->
 	
@@ -549,10 +561,12 @@
 				Заявка на участие в проекте
 			</h3><!-- /.order-form__title -->
 
-			<form action="ajax/contact.php" class="order-form__form form" method="post">
-				<input type="hidden" name="required" value="name,message" />
-				<input type="hidden" name="type" value="Форма" />
-			
+			<form action="https://formspree.io/bazhenov@company.dnevnik.ru" class="order-form__form form" method="post">
+				
+				<input type="hidden" name="_subject" value="Заявка участие в ББЖ">
+				<input type="text" name="_gotcha" />
+				<input type="text" name="_format" value="plain" />
+
 				<div class="form__input-placeholder">
 						
 					<input type="text" class="form__input form__input--m required" name="fio" placeholder="Ф.И.О." />
@@ -583,7 +597,7 @@
 			
 				<div class="form__input-placeholder">
 						
-					<input type="email" class="form__input form__input--m required" name="email" placeholder="Электронная почта" />
+					<input type="email" class="form__input form__input--m required email" name="email" placeholder="Электронная почта" />
 			
 				</div> <!-- /.form__input-placeholder -->
 				
@@ -592,6 +606,10 @@
 					<button type="submit" class="button button--yellow button--l">Отправить</button>
 			
 				</div> <!-- /.form__button-placeholder -->
+
+				<div class="order-form__success">
+					
+				</div><!-- /.order-form__success -->
 			
 			</form> <!-- /.form -->
 

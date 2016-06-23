@@ -245,8 +245,90 @@
 		font-size: 24px;
 		margin: 25px 0 0;
 	}
+
+	&__map{
+		margin: -100px 0 -100px;
+	}
 }
 
+/* ==========================================================================
+ * map
+ * ========================================================================== */
+
+.map{
+	//position: relative;
+
+	&__balloon{
+		position: absolute;
+		opacity: 0;
+		left: -9999px;
+		top: 0;
+
+		transition: opacity .6s;
+
+		&--visible{
+			opacity: 1;
+		}	
+	}
+}
+
+.map-balloon{
+	background: #fff;
+	color: $text;
+	box-shadow: 0 0 10px rgba(0,0,0,.5);
+	border-radius: 4px;
+	padding: 15px 20px;
+
+	&:before{
+		content: '';
+		display: block;
+		position: absolute;
+		right: 100%;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		@include sprite($bubble-arrow);
+	}
+
+	&__title{
+		font-size: 18px;
+		font-weight: 600;
+		margin: 0 0 8px;
+	}
+
+	&__text{
+		font-size: 14px;
+		line-height: (20/14);
+		color: $grey;
+	}
+}
+
+/* ==========================================================================
+ * svg-map
+ * ========================================================================== */
+
+.svg-map{
+
+	width: 100%;
+	height: auto;
+
+	&__area{
+		fill: #4683C4;
+		transition: all .6s;
+		transform-origin: 50% 50%;
+
+		&--enabled{
+			fill: #3c64ae;
+		
+			&:hover{
+				cursor: help;
+				fill: #1c519a;
+				//transform: scale(1.1);
+				box-shadow: 0 0 10px rgba(0,0,0,.5); 
+			}
+		}
+	}
+}
 
 /* ==========================================================================
  * docs
@@ -567,6 +649,22 @@
 
 	&__button-placeholder{
 		text-align: center;
+	}
+
+	&__success{
+		
+		text-align: center;
+		padding: 10px;
+		margin: 20px 0 0;
+		border: 2px solid #A1D490;
+		background: #DBF5D3;
+		border-radius: 5px;
+
+		&--error{
+			border-color: #E6A3A6;
+			background: #F5D7D9;
+		}
+		
 	}
 }
 
