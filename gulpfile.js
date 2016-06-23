@@ -120,7 +120,10 @@ gulp.task('html', function(callback){
 		html('dnevnik');
 	}
 
-	callback();
+	setTimeout( ()=> { //to let write files
+		callback();
+	},300);
+	
 
 });
 
