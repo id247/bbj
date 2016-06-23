@@ -256,7 +256,19 @@
  * ========================================================================== */
 
 .map{
-	//position: relative;
+	
+	&__svg-placeholder{
+	    width: 100%;
+	    height: 0;
+	    padding-top: 69%;
+	    position: relative;
+	}
+
+	&__svg{
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	}
 
 	&__balloon{
 		position: absolute;
@@ -308,9 +320,6 @@
  * ========================================================================== */
 
 .svg-map{
-
-	width: 100%;
-	height: auto;
 
 	&__area{
 		fill: #4683C4;
