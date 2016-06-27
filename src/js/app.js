@@ -210,6 +210,7 @@ export default (function App(window, document, $){
 
 		$areas.on('mouseleave', function(e){
 			$balloon.removeClass('map__balloon--visible');
+			$balloon.css('left', '');
 		});
 	}
 
