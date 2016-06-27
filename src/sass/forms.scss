@@ -107,6 +107,12 @@
 	&__input-placeholder{
 		position: relative;
 		margin: 0 0 20px;
+
+		&--input-filled{
+			.form__label{
+				opacity: 1;
+			}
+		}
 	}
 
 	&__button-placeholder{
@@ -129,11 +135,15 @@
 		&.error{
 			border-color: #ef6d51;
 		}
+
 	}
 	&__input{
 		&--m{
-			height: 48px;
-			line-height: 48px;
+			font-size: 16px;
+			padding-top: 22px;
+			padding-bottom: 22px;
+			height: 54px;
+			line-height: 16px;
 		}
 	}
 	&__textarea{
@@ -142,6 +152,16 @@
 		&--h120{
 			height: 120px;
 		}
+	}
+
+	&__label{
+		position: absolute;
+		top: 5px;
+		left: 20px;
+		color: #999;
+		font-size: 14px;
+		opacity: 0;
+		transition: all .3s;
 	}
 
 	label.error{

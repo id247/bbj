@@ -125,6 +125,16 @@ export default (function App(window, document, $){
 			min: jQuery.validator.format('Please enter a value greater than or equal to {0}.')
 		});
 
+		$('.form__input').on('change keyup', function(){
+			const $this = $(this);
+			const $placeholder = $(this).parent();
+			if ($this.val().length > 0){
+				$placeholder.addClass('form__input-placeholder--input-filled');
+			}else{
+				$placeholder.removeClass('form__input-placeholder--input-filled');
+			}
+		});
+
 		$('form').each( function(){
 
 			const $form = $(this);
