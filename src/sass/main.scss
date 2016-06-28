@@ -322,21 +322,24 @@
 
 .svg-map{
 
+	&__data{
+		.svg-map__area{
+			fill: #3c64ae;
+
+		}
+
+		&:hover{			
+			.svg-map__area{
+				cursor: help;
+				fill: #1c519a;
+			}
+		}
+	}
+
 	&__area{
 		fill: #4683C4;
 		transition: all .6s;
 		transform-origin: 50% 50%;
-
-		&--enabled{
-			fill: #3c64ae;
-		
-			&:hover{
-				cursor: help;
-				fill: #1c519a;
-				//transform: scale(1.1);
-				box-shadow: 0 0 10px rgba(0,0,0,.5); 
-			}
-		}
 	}
 }
 

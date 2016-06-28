@@ -189,10 +189,15 @@ export default (function App(window, document, $){
 	}
 
 	function map(){
-		const $areas = $('.svg-map__area');
+		const $areas = $('.svg-map__data');
 		const $balloon = $('#map-ballon');
 		const $balloonTitle = $balloon.find('.map-balloon__title');
 		const $balloonText = $balloon.find('.map-balloon__text');
+
+		function reset(){
+			$balloon.removeClass('map__balloon--visible');
+			$balloon.css('left', '');
+		}
 
 		$areas.on('mouseenter', function(e){
 			const $area = $(this);
@@ -215,13 +220,10 @@ export default (function App(window, document, $){
 				left: offset.left + bBox.width + 30,
 			});		
 
-			console.log(bBox);
+			//console.log(bBox);
 		});
 
-		$areas.on('mouseleave', function(e){
-			$balloon.removeClass('map__balloon--visible');
-			$balloon.css('left', '');
-		});
+		$areas.on('mouseleave', reset);
 	}
 
 	function init(){
