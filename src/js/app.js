@@ -70,17 +70,19 @@ export default (function App(window, document, $){
 	function menu(){
 		var $menuHrefs = $('.menu__href');
 		var $sections = $('.section');
+		var $header = $('#header');
 
 		var winHeight = ( window.innerHeight || document.documentElement.clientHeight );
 
-		function setActive(){						
+		function setActive(){	
+			var headerHeight = $header.hasClass('header--scrolled') ? $header.outerHeight() : 0;				
 			$sections.each(function(index, section){				
 				var sectionId = $(this).attr('id');
 				var rect = this.getBoundingClientRect();
 				var rectTop = Math.round(rect.top);
 				var rectBottom = Math.round(rect.bottom);
 
-				if (rectTop <= 50 && rectBottom / 2 <= winHeight ){
+				if (rectTop <= headerHeight + 2 && rectBottom / 2 <= winHeight ){
 					$menuHrefs.removeClass('active');
 					$menuHrefs.filter('[href="#' + sectionId + '"]').addClass('active');
 				}

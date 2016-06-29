@@ -523,6 +523,8 @@
 
 .testimonials{
 
+	padding: 0;
+
 	&__wrap{
 		background: #fff;
 		padding: 70px 70px;
@@ -541,7 +543,7 @@
 	}
 
 	&__list{
-		
+		margin: 0 0 -35px;
 	}
 
 	&__item{
