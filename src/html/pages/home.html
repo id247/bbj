@@ -563,8 +563,18 @@
 			<h3 class="order-form__title">
 				Заявка на участие в проекте
 			</h3><!-- /.order-form__title -->
+			
+			 @@if (server === "local"){
 
 			<form action="https://formspree.io/bazhenov@company.dnevnik.ru" class="order-form__form form" method="post">
+
+			}
+			
+			 @@if (server !== "local"){
+
+			<form action="https://formspree.io/support-bbz@company.dnevnik.ru" class="order-form__form form" method="post">
+
+			}
 				
 				<input type="hidden" name="_subject" value="Заявка участие в ББЖ">
 				<input type="text" name="_gotcha" />
