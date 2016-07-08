@@ -196,11 +196,6 @@ export default (function App(window, document, $){
 		const $balloonTitle = $balloon.find('.map-balloon__title');
 		const $balloonText = $balloon.find('.map-balloon__text');
 
-		function reset(){
-			$balloon.removeClass('map__balloon--visible');
-			$balloon.css('left', '');
-		}
-
 		$areas.on('mouseenter', function(e){
 			const $area = $(this);
 			const title = $area.attr('mydata:title');
@@ -222,10 +217,11 @@ export default (function App(window, document, $){
 				left: offset.left + bBox.width + 30,
 			});		
 
-			//console.log(bBox);
 		});
 
-		$areas.on('mouseleave', reset);
+		$areas.on('mouseleave', () =>{
+			$balloon.removeClass('map__balloon--visible');
+		});
 	}
 
 	function init(){

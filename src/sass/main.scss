@@ -273,14 +273,15 @@
 	&__balloon{
 		position: absolute;
 		opacity: 0;
-		left: -9999px;
+		visibility: hidden;
 		top: 0;
+		left: 0;
 
-		transition: opacity .6s, left 0s .7s;
+		transition: opacity .6s, visibility .6s;
 
 		&--visible{
 			opacity: 1;
-			transition: opacity .6s, left 0s .0s;
+			visibility: visible;
 		}	
 	}
 }
