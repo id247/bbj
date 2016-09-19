@@ -195,6 +195,7 @@ export default (function App(window, document, $){
 		const $balloon = $('#map-ballon');
 		const $balloonTitle = $balloon.find('.map-balloon__title');
 		const $balloonText = $balloon.find('.map-balloon__text');
+		const $document = $(document);
 
 		$areas.on('mouseenter', function(e){
 			const $area = $(this);
@@ -202,6 +203,7 @@ export default (function App(window, document, $){
 			const text = this.getAttribute('mydata:text');
 			const offset = $area.offset();
 			const bBox = this.getBBox();
+			const docWidth =  $document.width();
 
 			if (!title || !text){
 				return;
@@ -212,10 +214,22 @@ export default (function App(window, document, $){
 
 			$balloon.addClass('map__balloon--visible');
 
-			$balloon.css({
-				top: offset.top + bBox.height / 2 - $balloon.outerHeight() / 2,
-				left: offset.left + bBox.width + 30,
-			});		
+			if (offset.left < docWidth / 1.7){
+				$balloon.removeClass('map-balloon--left');	
+				$balloon.css({
+					top: offset.top + bBox.height / 2 - $balloon.outerHeight() / 2,
+					left: offset.left + bBox.width + 30,
+					right: 'auto',
+				});		
+
+			}else{	
+				$balloon.addClass('map-balloon--left');			
+				$balloon.css({
+					top: offset.top + bBox.height / 2 - $balloon.outerHeight() / 2,
+					left: 'auto',
+					right: docWidth - offset.left + 15,
+				});		
+			}
 
 		});
 

@@ -304,6 +304,12 @@
 		@include sprite($bubble-arrow);
 	}
 
+	&--left:before{
+		right: auto;
+		left: 100%;
+		@include sprite($bubble-arrow-2);
+	}
+
 	&__title{
 		font-size: 18px;
 		font-weight: 600;
